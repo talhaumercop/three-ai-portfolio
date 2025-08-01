@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500;1,9..40,600&family=Fredoka:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Patrick+Hand&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .sticky-note {
+    @apply relative p-6 rounded-lg shadow-lg transition-all duration-300 cursor-pointer border-2;
+    transform: rotate(var(--rotation, 2deg));
+  }
+  
+  .sticky-note:hover {
+    transform: rotate(0deg) scale(1.02);
+  }
+  
+  .sticky-note::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/30 to-transparent rounded-lg pointer-events-none;
+  }
+  
+  .sticky-note-yellow {
+    @apply bg-yellow-100 border-yellow-300;
+  }
+  
+  .sticky-note-blue {
+    @apply bg-blue-100 border-blue-300;
+  }
+  
+  .sticky-note-pink {
+    @apply bg-pink-100 border-pink-300;
+  }
+  
+  .sticky-note-green {
+    @apply bg-green-100 border-green-300;
+  }
+  
+  .sticky-note-orange {
+    @apply bg-orange-100 border-orange-300;
+  }
+  
+  .handwritten-arrow {
+    @apply text-2xl text-gray-600 transform rotate-12;
+    font-family: 'Patrick Hand', cursive;
+  }
+  
+  .handwritten-text {
+    font-family: 'Patrick Hand', cursive;
+  }
+  
+  .project-card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+  }
+  
+  .hero-title {
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .sticky-note-title {
+    font-family: 'Fredoka', sans-serif;
+  }
+  
+  .body-text {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* 3D Transform Utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .rotate-x-12 {
+    transform: rotateX(12deg);
+  }
+  
+  .rotate-y-12 {
+    transform: rotateY(12deg);
+  }
+  
+  .transform-3d {
+    transform-style: preserve-3d;
+  }
+}
