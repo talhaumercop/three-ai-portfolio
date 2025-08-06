@@ -6,7 +6,9 @@ import Hero from './components/Hero';
 import SkillsSection from './components/SkillsSection';
 import ProjectsSection from './components/ProjectsSection';
 import WorkExperience from './components/WorkExperience';
+import CertificatesSection from './components/CertificatesSection';
 import WhyTrustMe from './components/WhyTrustMe';
+import GitHubContributions from './components/GitHubContributions';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
@@ -38,7 +40,9 @@ function App() {
       <SkillsSection />
       <ProjectsSection />
       <WorkExperience />
+      <CertificatesSection />
       <WhyTrustMe />
+      <GitHubContributions />
       <ContactSection />
       <Footer />
     </div>

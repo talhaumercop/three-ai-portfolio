@@ -18,10 +18,9 @@ function KeyboardMesh() {
   const meshRef = useRef();
   const gltf = useLoader(GLTFLoader, '/stylized_keyboard/scene.gltf');
   
-  // Floating animation with auto-rotation
+  // Auto-rotation only
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.8) * 0.3;
       meshRef.current.rotation.y = state.clock.elapsedTime * 0.2; // Auto-rotation
     }
   });

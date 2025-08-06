@@ -35,7 +35,7 @@ const WhyTrustMe = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gray-50">
+    <section ref={sectionRef} className="p-60 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 text-center">
         {/* Highlighter Heading */}
         <motion.div 
