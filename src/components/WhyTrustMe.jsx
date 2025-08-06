@@ -35,17 +35,17 @@ const WhyTrustMe = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="p-60 bg-gray-50">
-      <div className="max-w-4xl mx-auto px-4 text-center">
+    <section ref={sectionRef} className="py-16 sm:py-24 md:py-32 lg:py-40 xl:py-60 bg-gray-50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Highlighter Heading */}
         <motion.div 
-          className="mb-12"
+          className="mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 inline-block relative">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 inline-block relative">
             <span className="relative z-20">Why Trust Me?</span>
             <div 
               className="absolute bg-yellow-300 opacity-40 transform -skew-x-12 rounded-lg z-10"
@@ -61,12 +61,12 @@ const WhyTrustMe = () => {
 
         {/* Animated Quote Text */}
         <div className="max-w-3xl mx-auto">
-          <p className="text-xl lg:text-2xl text-gray-700 italic leading-relaxed">
-            <span className="text-4xl text-gray-400 mr-2">"</span>
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 italic leading-relaxed">
+            <span className="text-2xl sm:text-3xl lg:text-4xl text-gray-400 mr-1 sm:mr-2">"</span>
             {words.map((word, index) => (
               <motion.span
                 key={index}
-                className={`inline-block mr-2 ${index < visibleWords ? 'opacity-100' : 'opacity-0'}`}
+                className={`inline-block mr-1 sm:mr-2 ${index < visibleWords ? 'opacity-100' : 'opacity-0'}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ 
                   opacity: index < visibleWords ? 1 : 0,
@@ -80,13 +80,13 @@ const WhyTrustMe = () => {
                 {word}
               </motion.span>
             ))}
-            <span className="text-4xl text-gray-400 ml-2">"</span>
+            <span className="text-2xl sm:text-3xl lg:text-4xl text-gray-400 ml-1 sm:ml-2">"</span>
           </p>
         </div>
 
         {/* Call to Action */}
         <motion.div 
-          className="mt-12"
+          className="mt-8 sm:mt-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
@@ -94,7 +94,7 @@ const WhyTrustMe = () => {
         >
           <motion.a
             href="#contact"
-            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transition-all duration-300 inline-block"
+            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:shadow-xl transition-all duration-300 inline-block"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >

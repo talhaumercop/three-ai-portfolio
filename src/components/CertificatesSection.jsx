@@ -55,7 +55,7 @@ const CertificatesSection = () => {
   const currentCertData = certifications[currentIndex];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-black text-white relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-black text-white relative overflow-hidden py-8 sm:py-12 lg:py-16">
       {/* Animated Background Particles */}
       <div className="absolute inset-0">
         {[...Array(20)].map((_, i) => (
@@ -83,15 +83,15 @@ const CertificatesSection = () => {
         
         {/* Enhanced Progress Indicator */}
         <motion.div 
-          className="absolute top-8 right-8 z-20"
+          className="absolute top-4 right-4 sm:top-8 sm:right-8 z-20"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5 }}
         >
-          <div className="text-sm font-medium mb-2 text-white/80">
+          <div className="text-xs sm:text-sm font-medium mb-2 text-white/80">
             Certificate {currentIndex + 1} of {certifications.length}
           </div>
-          <div className="w-32 h-1 bg-white/20 rounded-full overflow-hidden">
+          <div className="w-24 sm:w-32 h-1 bg-white/20 rounded-full overflow-hidden">
             <motion.div 
               className="h-full bg-gradient-to-r from-blue-400 to-purple-400"
               initial={{ width: 0 }}
@@ -102,7 +102,7 @@ const CertificatesSection = () => {
         </motion.div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           
           {/* Certificate Content */}
           <AnimatePresence mode="wait">
@@ -112,12 +112,12 @@ const CertificatesSection = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="space-y-8"
+              className="space-y-6 sm:space-y-8 order-2 lg:order-1"
             >
               {/* Header */}
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <motion.h2 
-                  className="text-5xl lg:text-6xl font-bold leading-tight"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.8 }}
@@ -125,7 +125,7 @@ const CertificatesSection = () => {
                   Professional Certifications
                 </motion.h2>
                 <motion.p 
-                  className="text-xl text-blue-200"
+                  className="text-lg sm:text-xl text-blue-200"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.8 }}
@@ -140,11 +140,11 @@ const CertificatesSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="space-y-6"
+                className="space-y-4 sm:space-y-6"
               >
                 <div>
                   <motion.h3 
-                    className="text-3xl font-bold mb-2"
+                    className="text-2xl sm:text-3xl font-bold mb-2"
                     style={{ fontFamily: "'Playfair Display', serif", fontStyle: 'italic' }}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -153,7 +153,7 @@ const CertificatesSection = () => {
                     {currentCertData.title}
                   </motion.h3>
                   <motion.p 
-                    className="text-lg text-blue-200"
+                    className="text-base sm:text-lg text-blue-200"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.4 }}
@@ -164,7 +164,7 @@ const CertificatesSection = () => {
 
                 {/* Description */}
                 <motion.p
-                  className="text-gray-300 leading-relaxed"
+                  className="text-sm sm:text-base text-gray-300 leading-relaxed"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.6 }}
@@ -178,7 +178,7 @@ const CertificatesSection = () => {
                    animate={{ opacity: 1, y: 0 }}
                    transition={{ delay: 0.6, duration: 0.6 }}
                  >
-                   <h4 className="text-lg font-semibold mb-3 text-purple-200">
+                   <h4 className="text-base sm:text-lg font-semibold mb-3 text-purple-200">
                      Key Skills
                    </h4>
                    <div className="flex flex-wrap gap-2">
@@ -189,7 +189,7 @@ const CertificatesSection = () => {
                          animate={{ opacity: 1, scale: 1 }}
                          transition={{ delay: 0.7 + index * 0.1, duration: 0.4 }}
                          whileHover={{ scale: 1.05 }}
-                         className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full text-sm text-gray-200 border border-white/20 hover:border-white/40 transition-all duration-300 cursor-pointer"
+                         className="px-2 sm:px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full text-xs sm:text-sm text-gray-200 border border-white/20 hover:border-white/40 transition-all duration-300 cursor-pointer"
                        >
                          {skill}
                        </motion.span>
@@ -234,7 +234,7 @@ const CertificatesSection = () => {
               animate={{ opacity: 1, scale: 1, rotateY: 0 }}
               exit={{ opacity: 0, scale: 0.8, rotateY: -15 }}
               transition={{ duration: 0.9, ease: "easeOut" }}
-              className="relative"
+              className="relative order-1 lg:order-2"
             >
               <div className="relative group">
                 <motion.div 
@@ -246,29 +246,29 @@ const CertificatesSection = () => {
                   transition={{ duration: 3, repeat: Infinity }}
                 ></motion.div>
                 <motion.div 
-                  className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-2xl hover:border-white/30 transition-all duration-500"
+                  className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/20 shadow-2xl hover:border-white/30 transition-all duration-500"
                   whileHover={{ y: -5, scale: 1.02 }}
                 >
                   <motion.img
                     src={currentCertData.image}
                     alt={currentCertData.title}
-                    className="w-full h-84 object-cover rounded-lg shadow-lg"
+                    className="w-full h-48 sm:h-64 lg:h-84 object-cover rounded-lg shadow-lg"
                     initial={{ opacity: 0, scale: 1.1 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.3, duration: 0.8 }}
                   />
                   <motion.div 
-                    className="mt-6 text-center"
+                    className="mt-4 sm:mt-6 text-center"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6 }}
                   >
                     <motion.div 
-                      className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full border border-white/20 hover:border-white/40 transition-all duration-300"
+                      className="inline-flex items-center px-3 sm:px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full border border-white/20 hover:border-white/40 transition-all duration-300"
                       whileHover={{ scale: 1.05 }}
                     >
                       <motion.span 
-                        className="text-sm font-medium"
+                        className="text-xs sm:text-sm font-medium"
                         animate={{ opacity: [0.7, 1, 0.7] }}
                         transition={{ duration: 2, repeat: Infinity }}
                       >
@@ -284,16 +284,16 @@ const CertificatesSection = () => {
 
         {/* Enhanced Navigation Controls */}
         <motion.div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+          className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.6 }}
         >
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-3 sm:space-x-6">
             {/* Previous Button */}
             <motion.button
               onClick={prevCert}
-              className="p-4 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20 bg-white/10 hover:bg-white/20 text-white text-xl"
+              className="p-3 sm:p-4 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20 bg-white/10 hover:bg-white/20 text-white text-lg sm:text-xl"
               whileHover={{ scale: 1.15, rotate: -5 }}
               whileTap={{ scale: 0.9 }}
               initial={{ opacity: 0, x: -20 }}
@@ -304,15 +304,15 @@ const CertificatesSection = () => {
             </motion.button>
 
             {/* Enhanced Indicator Dots */}
-            <div className="flex space-x-3">
+            <div className="flex space-x-2 sm:space-x-3">
               {certifications.map((_, index) => (
                 <motion.button
                   key={index}
                   onClick={() => goToCert(index)}
                   className={`rounded-full transition-all duration-500 ${
                     index === currentIndex 
-                      ? 'w-8 h-3 bg-gradient-to-r from-blue-400 to-purple-400' 
-                      : 'w-3 h-3 bg-white/40 hover:bg-white/60'
+                      ? 'w-6 sm:w-8 h-2 sm:h-3 bg-gradient-to-r from-blue-400 to-purple-400' 
+                      : 'w-2 sm:w-3 h-2 sm:h-3 bg-white/40 hover:bg-white/60'
                   }`}
                   whileHover={{ scale: 1.3 }}
                   whileTap={{ scale: 0.8 }}
@@ -326,7 +326,7 @@ const CertificatesSection = () => {
             {/* Next Button */}
             <motion.button
               onClick={nextCert}
-              className="p-4 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20 bg-white/10 hover:bg-white/20 text-white text-xl"
+              className="p-3 sm:p-4 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20 bg-white/10 hover:bg-white/20 text-white text-lg sm:text-xl"
               whileHover={{ scale: 1.15, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
               initial={{ opacity: 0, x: 20 }}
@@ -339,13 +339,13 @@ const CertificatesSection = () => {
 
           {/* Enhanced Auto-transition indicator */}
           <motion.div 
-            className="text-center mt-4"
+            className="text-center mt-3 sm:mt-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
           >
             <motion.p 
-              className="text-sm text-white/70"
+              className="text-xs sm:text-sm text-white/70"
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
