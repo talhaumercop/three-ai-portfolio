@@ -11,8 +11,7 @@ import WhyTrustMe from './components/WhyTrustMe';
 import GitHubContributions from './components/GitHubContributions';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
-
-gsap.registerPlugin(ScrollTrigger);
+import ChatAgent from './components/ChatAgent';
 
 function App() {
   useEffect(() => {
@@ -45,6 +44,7 @@ function App() {
       <GitHubContributions />
       <ContactSection />
       <Footer />
+      <ChatAgent />
     </div>
   );
 }
