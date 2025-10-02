@@ -52,6 +52,63 @@ const ProjectsSection = () => {
     }
   ];
 
+  const aiProjects = [
+    {
+      title: "Python Docstring and Unit Test Generator",
+      description: "OpenAI-powered program that automatically generates docstrings and unit tests for Python code",
+      tech: ["Python", "OpenAI", "Automation", "Testing"],
+      url: "https://huggingface.co/spaces/talhafewfefefew/Python_Docstring_and_Unit_Test_Generator"
+    },
+    {
+      title: "Summarize Website",
+      description: "OpenAI-powered program that extracts and summarizes content from websites",
+      tech: ["OpenAI", "Web Scraping", "NLP", "Summarization"],
+      url: "https://huggingface.co/spaces/talhafewfefefew/Summarize_website"
+    },
+    {
+      title: "Mental Health Chatbot",
+      description: "RAG system with OpenAI that provides mental health support and resources",
+      tech: ["RAG", "OpenAI", "Mental Health", "Chatbot"],
+      url: "https://huggingface.co/spaces/talhafewfefefew/Mental-Health"
+    },
+    {
+      title: "Pakistani Law RAG",
+      description: "RAG system with OpenAI for Pakistani legal information and assistance",
+      tech: ["RAG", "OpenAI", "Legal", "Information Retrieval"],
+      url: "https://huggingface.co/spaces/talhafewfefefew/pakistani-law-rag"
+    },
+    {
+      title: "AI Agent that Copies My Accent",
+      description: "Voice cloning application that mimics user's accent using OpenAI SDK",
+      tech: ["OpenAI SDK", "Voice Cloning", "Audio Processing"],
+      url: "https://huggingface.co/spaces/talhafewfefefew/My-Accent"
+    },
+    {
+      title: "AI Job Skills Advisor",
+      description: "Real-time job search, free courses & skills comparison tool",
+      tech: ["AI Agent", "Job Search", "Skills Analysis"],
+      url: "https://huggingface.co/spaces/talhafewfefefew/Skill-Job-Advisor"
+    },
+    {
+      title: "AI Customer Support Agent",
+      description: "RAG System for automated customer support and assistance",
+      tech: ["RAG", "Customer Support", "Automation"],
+      url: "https://huggingface.co/spaces/talhafewfefefew/EMAIL-SENDER"
+    },
+    {
+      title: "Multi-tool AI Agent",
+      description: "Advanced agent using LangGraph, LangSmith, LangChain with Playwright, Serper, Pushover, and Calendar Integration",
+      tech: ["LangGraph", "LangSmith", "LangChain", "Multi-tool"],
+      url: "https://github.com/talhaumercop/langgraph-agent"
+    },
+    {
+      title: "AI Website Generator",
+      description: "PowerShell Commands & React Code Generator using Crew AI",
+      tech: ["Crew AI", "Code Generation", "PowerShell", "React"],
+      url: "https://github.com/talhaumercop/website-maker-cre"
+    }
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -180,6 +237,64 @@ const ProjectsSection = () => {
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* AI Projects Section */}
+        <motion.div 
+          className="mt-24"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.h3 
+            className="text-3xl font-bold text-gray-900 mb-8 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            AI Projects
+          </motion.h3>
+
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {aiProjects.map((project, index) => (
+              <motion.a
+                key={index}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                variants={itemVariants}
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+                whileHover={{ y: -5, backgroundColor: "#f8faff" }}
+              >
+                <h4 className="text-lg font-bold text-gray-900 mb-2">
+                  {project.title}
+                </h4>
+                <p className="text-gray-600 mb-4 text-sm">
+                  {project.description}
+                </p>
+                
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.tech.map((tech, techIndex) => (
+                    <span 
+                      key={techIndex}
+                      className="bg-blue-50 text-blue-700 px-2 py-1 rounded-full text-xs font-medium"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </motion.a>
+            ))}
+          </motion.div>
         </motion.div>
 
         {/* Call to action */}

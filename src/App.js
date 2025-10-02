@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Hero from './components/Hero';
+import SummarySection from './components/SummarySection';
 import SkillsSection from './components/SkillsSection';
 import ProjectsSection from './components/ProjectsSection';
 import WorkExperience from './components/WorkExperience';
@@ -36,6 +37,7 @@ function App() {
   return (
     <div className="App">
       <Hero />
+      <SummarySection />
       <SkillsSection />
       <ProjectsSection />
       <WorkExperience />

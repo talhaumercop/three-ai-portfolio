@@ -29,6 +29,15 @@ const CertificatesSection = () => {
       image: "/certificates/webdevelopment.jpg",
       description: "Comprehensive modern web development from frontend to deployment.",
       skills: ["React & Node.js", "JavaScript", "API Development", "Cloud Deployment"]
+    },
+    {
+      title: "Agentic AI",
+      issuer: "Udemy - Ed Donner",
+      date: "2024",
+      image: "/certificates/agents.jpg",
+      certificateUrl: "https://www.udemy.com/certificate/UC-ee1cdd34-6056-458d-81f4-f25717d654c7/",
+      description: "4-Week hands-on Agentic-AI journey with practical projects and real-world applications.",
+      skills: ["MCP", "Open-AI-SDKs", "Langgraph", "Crew AI"]
     }
   ];
 
